@@ -1,0 +1,669 @@
+{
+  "info": {
+    "name": "Microsoft Dynamics 365 Business Central API v2.0",
+    "description": "Comprehensive collection for Microsoft Dynamics 365 Business Central API v2.0 endpoints",
+    "version": "1.0.0",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "tokenUrl",
+        "value": "https://login.microsoftonline.com/{{tenantId}}/oauth2/v2.0/token",
+        "type": "string"
+      },
+      {
+        "key": "authUrl",
+        "value": "https://login.microsoftonline.com/{{tenantId}}/oauth2/v2.0/authorize",
+        "type": "string"
+      },
+      {
+        "key": "scope",
+        "value": "https://api.businesscentral.dynamics.com/.default",
+        "type": "string"
+      },
+      {
+        "key": "clientId",
+        "value": "{{clientId}}",
+        "type": "string"
+      },
+      {
+        "key": "clientSecret",
+        "value": "{{clientSecret}}",
+        "type": "string"
+      },
+      {
+        "key": "grant_type",
+        "value": "client_credentials",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://api.businesscentral.dynamics.com/v2.0/{{tenantId}}/{{environmentName}}/api/v2.0"
+    },
+    {
+      "key": "companyId",
+      "value": ""
+    }
+  ],
+  "item": [
+    {
+      "name": "Company Management",
+      "item": [
+        {
+          "name": "Get All Companies",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/companies",
+              "host": ["{{baseUrl}}"],
+              "path": ["companies"]
+            },
+            "description": "Retrieve a list of all companies in the environment"
+          },
+          "response": []
+        },
+        {
+          "name": "Get Company by ID",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/companies({{companyId}})",
+              "host": ["{{baseUrl}}"],
+              "path": ["companies({{companyId}})"]
+            },
+            "description": "Retrieve details of a specific company by ID"
+          },
+          "response": []
+        },
+        {
+          "name": "Create Company",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"displayName\": \"New Company Name\",\n  \"businessProfileId\": \"{{businessProfileId}}\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/companies",
+              "host": ["{{baseUrl}}"],
+              "path": ["companies"]
+            },
+            "description": "Create a new company"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Customer Management",
+      "item": [
+        {
+          "name": "Get All Customers",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/companies({{companyId}})/customers",
+              "host": ["{{baseUrl}}"],
+              "path": ["companies({{companyId}})", "customers"]
+            },
+            "description": "Retrieve all customers for a specific company"
+          },
+          "response": []
+        },
+        {
+          "name": "Get Customer by ID",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/companies({{companyId}})/customers({{customerId}})",
+              "host": ["{{baseUrl}}"],
+              "path": ["companies({{companyId}})", "customers({{customerId}})"]
+            },
+            "description": "Retrieve a specific customer by ID"
+          },
+          "response": []
+        },
+        {
+          "name": "Create Customer",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"displayName\": \"Customer Name\",\n  \"type\": \"Company\",\n  \"addressLine1\": \"123 Main Street\",\n  \"city\": \"Seattle\",\n  \"state\": \"WA\",\n  \"country\": \"US\",\n  \"postalCode\": \"98052\",\n  \"phoneNumber\": \"+1-555-123-4567\",\n  \"email\": \"customer@example.com\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/companies({{companyId}})/customers",
+              "host": ["{{baseUrl}}"],
+              "path": ["companies({{companyId}})", "customers"]
+            },
+            "description": "Create a new customer"
+          },
+          "response": []
+        },
+        {
+          "name": "Update Customer",
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              },
+              {
+                "key": "If-Match",
+                "value": "*"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"displayName\": \"Updated Customer Name\",\n  \"email\": \"updated@example.com\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/companies({{companyId}})/customers({{customerId}})",
+              "host": ["{{baseUrl}}"],
+              "path": ["companies({{companyId}})", "customers({{customerId}})"]
+            },
+            "description": "Update an existing customer"
+          },
+          "response": []
+        },
+        {
+          "name": "Delete Customer",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "If-Match",
+                "value": "*"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/companies({{companyId}})/customers({{customerId}})",
+              "host": ["{{baseUrl}}"],
+              "path": ["companies({{companyId}})", "customers({{customerId}})"]
+            },
+            "description": "Delete a customer"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Item Management",
+      "item": [
+        {
+          "name": "Get All Items",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/companies({{companyId}})/items",
+              "host": ["{{baseUrl}}"],
+              "path": ["companies({{companyId}})", "items"]
+            },
+            "description": "Retrieve all items for a specific company"
+          },
+          "response": []
+        },
+        {
+          "name": "Get Item by ID",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/companies({{companyId}})/items({{itemId}})",
+              "host": ["{{baseUrl}}"],
+              "path": ["companies({{companyId}})", "items({{itemId}})"]
+            },
+            "description": "Retrieve a specific item by ID"
+          },
+          "response": []
+        },
+        {
+          "name": "Create Item",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"number\": \"ITEM001\",\n  \"displayName\": \"Sample Item\",\n  \"type\": \"Inventory\",\n  \"unitPrice\": 10.50,\n  \"unitCost\": 7.25,\n  \"inventory\": 100,\n  \"blocked\": false\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/companies({{companyId}})/items",
+              "host": ["{{baseUrl}}"],
+              "path": ["companies({{companyId}})", "items"]
+            },
+            "description": "Create a new item"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Sales Documents",
+      "item": [
+        {
+          "name": "Get Sales Orders",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/companies({{companyId}})/salesOrders",
+              "host": ["{{baseUrl}}"],
+              "path": ["companies({{companyId}})", "salesOrders"]
+            },
+            "description": "Retrieve all sales orders"
+          },
+          "response": []
+        },
+        {
+          "name": "Get Sales Invoices",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/companies({{companyId}})/salesInvoices",
+              "host": ["{{baseUrl}}"],
+              "path": ["companies({{companyId}})", "salesInvoices"]
+            },
+            "description": "Retrieve all sales invoices"
+          },
+          "response": []
+        },
+        {
+          "name": "Get Sales Quotes",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/companies({{companyId}})/salesQuotes",
+              "host": ["{{baseUrl}}"],
+              "path": ["companies({{companyId}})", "salesQuotes"]
+            },
+            "description": "Retrieve all sales quotes"
+          },
+          "response": []
+        },
+        {
+          "name": "Create Sales Order",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"customerId\": \"{{customerId}}\",\n  \"orderDate\": \"2024-01-15\",\n  \"shipToName\": \"Customer Name\",\n  \"shipToAddressLine1\": \"123 Main Street\",\n  \"shipToCity\": \"Seattle\",\n  \"shipToState\": \"WA\",\n  \"shipToCountry\": \"US\",\n  \"shipToPostalCode\": \"98052\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/companies({{companyId}})/salesOrders",
+              "host": ["{{baseUrl}}"],
+              "path": ["companies({{companyId}})", "salesOrders"]
+            },
+            "description": "Create a new sales order"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Purchase Documents",
+      "item": [
+        {
+          "name": "Get Purchase Orders",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/companies({{companyId}})/purchaseOrders",
+              "host": ["{{baseUrl}}"],
+              "path": ["companies({{companyId}})", "purchaseOrders"]
+            },
+            "description": "Retrieve all purchase orders"
+          },
+          "response": []
+        },
+        {
+          "name": "Get Purchase Invoices",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/companies({{companyId}})/purchaseInvoices",
+              "host": ["{{baseUrl}}"],
+              "path": ["companies({{companyId}})", "purchaseInvoices"]
+            },
+            "description": "Retrieve all purchase invoices"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Vendor Management",
+      "item": [
+        {
+          "name": "Get All Vendors",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/companies({{companyId}})/vendors",
+              "host": ["{{baseUrl}}"],
+              "path": ["companies({{companyId}})", "vendors"]
+            },
+            "description": "Retrieve all vendors"
+          },
+          "response": []
+        },
+        {
+          "name": "Create Vendor",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"displayName\": \"Vendor Name\",\n  \"addressLine1\": \"456 Vendor Street\",\n  \"city\": \"Portland\",\n  \"state\": \"OR\",\n  \"country\": \"US\",\n  \"postalCode\": \"97201\",\n  \"phoneNumber\": \"+1-555-987-6543\",\n  \"email\": \"vendor@example.com\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/companies({{companyId}})/vendors",
+              "host": ["{{baseUrl}}"],
+              "path": ["companies({{companyId}})", "vendors"]
+            },
+            "description": "Create a new vendor"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Financial Data",
+      "item": [
+        {
+          "name": "Get Accounts",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/companies({{companyId}})/accounts",
+              "host": ["{{baseUrl}}"],
+              "path": ["companies({{companyId}})", "accounts"]
+            },
+            "description": "Retrieve all chart of accounts"
+          },
+          "response": []
+        },
+        {
+          "name": "Get General Ledger Entries",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/companies({{companyId}})/generalLedgerEntries",
+              "host": ["{{baseUrl}}"],
+              "path": ["companies({{companyId}})", "generalLedgerEntries"]
+            },
+            "description": "Retrieve general ledger entries"
+          },
+          "response": []
+        },
+        {
+          "name": "Get Journals",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/companies({{companyId}})/journals",
+              "host": ["{{baseUrl}}"],
+              "path": ["companies({{companyId}})", "journals"]
+            },
+            "description": "Retrieve all journals"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Query Examples",
+      "item": [
+        {
+          "name": "Filter Customers by Balance",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/companies({{companyId}})/customers?$filter=balance gt 1000",
+              "host": ["{{baseUrl}}"],
+              "path": ["companies({{companyId}})", "customers"],
+              "query": [
+                {
+                  "key": "$filter",
+                  "value": "balance gt 1000"
+                }
+              ]
+            },
+            "description": "Get customers with balance greater than 1000"
+          },
+          "response": []
+        },
+        {
+          "name": "Select Specific Customer Fields",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/companies({{companyId}})/customers?$select=id,displayName,email",
+              "host": ["{{baseUrl}}"],
+              "path": ["companies({{companyId}})", "customers"],
+              "query": [
+                {
+                  "key": "$select",
+                  "value": "id,displayName,email"
+                }
+              ]
+            },
+            "description": "Get only specific fields for customers"
+          },
+          "response": []
+        },
+        {
+          "name": "Get Top 10 Items Ordered by Name",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/companies({{companyId}})/items?$top=10&$orderby=displayName",
+              "host": ["{{baseUrl}}"],
+              "path": ["companies({{companyId}})", "items"],
+              "query": [
+                {
+                  "key": "$top",
+                  "value": "10"
+                },
+                {
+                  "key": "$orderby",
+                  "value": "displayName"
+                }
+              ]
+            },
+            "description": "Get top 10 items sorted by display name"
+          },
+          "response": []
+        },
+        {
+          "name": "Expand Customer with Sales Orders",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/companies({{companyId}})/customers?$expand=salesOrders",
+              "host": ["{{baseUrl}}"],
+              "path": ["companies({{companyId}})", "customers"],
+              "query": [
+                {
+                  "key": "$expand",
+                  "value": "salesOrders"
+                }
+              ]
+            },
+            "description": "Get customers with their related sales orders"
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}
