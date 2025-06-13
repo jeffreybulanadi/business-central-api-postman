@@ -112,6 +112,66 @@
       ]
     },
     {
+      "name": "Accounting period",
+      "description": "Accounting period resource type for Business Central",
+      "item": [
+        {
+          "name": "accountingPeriod resource type",
+          "description": "Represents an accounting period in Business Central",
+          "item": [
+            {
+              "name": "Get accounting periods",
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/companies({{companyId}})/accountingPeriods",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "companies({{companyId}})",
+                    "accountingPeriods"
+                  ]
+                },
+                "description": "Get all accounting periods"
+              },
+              "response": []
+            },
+            {
+              "name": "Get accounting period by ID",
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/companies({{companyId}})/accountingPeriods({{accountingPeriodId}})",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "companies({{companyId}})",
+                    "accountingPeriods({{accountingPeriodId}})"
+                  ]
+                },
+                "description": "Get a specific accounting period by ID"
+              },
+              "response": []
+            }
+          ]
+        }
+      ]
+    },
+    {
       "name": "Aged accounts payable",
       "description": "Aged accounts payable resource type for Business Central",
       "item": [
@@ -176,6 +236,230 @@
                   ]
                 },
                 "description": "Get aged accounts receivable information"
+              },
+              "response": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Apply vendor entry",
+      "description": "Apply vendor entry resource type for Business Central",
+      "item": [
+        {
+          "name": "applyVendorEntry resource type",
+          "description": "Represents a vendor entry application in Business Central",
+          "item": [
+            {
+              "name": "Get apply vendor entries",
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/companies({{companyId}})/applyVendorEntries",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "companies({{companyId}})",
+                    "applyVendorEntries"
+                  ]
+                },
+                "description": "Get all vendor entry applications"
+              },
+              "response": []
+            },
+            {
+              "name": "Create apply vendor entry",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/companies({{companyId}})/applyVendorEntries",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "companies({{companyId}})",
+                    "applyVendorEntries"
+                  ]
+                },
+                "description": "Create a new vendor entry application",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"vendorLedgerEntryId\": \"{{vendorLedgerEntryId}}\",\n  \"appliedToLedgerEntryId\": \"{{appliedToLedgerEntryId}}\",\n  \"amountToApply\": 0\n}"
+                }
+              },
+              "response": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Attachments",
+      "description": "Attachments resource type for Business Central",
+      "item": [
+        {
+          "name": "attachment resource type",
+          "description": "Represents an attachment in Business Central",
+          "item": [
+            {
+              "name": "Get attachments",
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/companies({{companyId}})/attachments",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "companies({{companyId}})",
+                    "attachments"
+                  ]
+                },
+                "description": "Get all attachments"
+              },
+              "response": []
+            },
+            {
+              "name": "Get attachment by ID",
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/companies({{companyId}})/attachments({{attachmentId}})",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "companies({{companyId}})",
+                    "attachments({{attachmentId}})"
+                  ]
+                },
+                "description": "Get a specific attachment by ID"
+              },
+              "response": []
+            },
+            {
+              "name": "Create attachment",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/companies({{companyId}})/attachments",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "companies({{companyId}})",
+                    "attachments"
+                  ]
+                },
+                "description": "Create a new attachment",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"fileName\": \"document.pdf\",\n  \"byteSize\": 0,\n  \"content\": \"base64-encoded-content\",\n  \"parentId\": \"{{parentId}}\",\n  \"parentType\": \"Item\"\n}"
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Update attachment",
+              "request": {
+                "method": "PATCH",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "If-Match",
+                    "value": "*"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/companies({{companyId}})/attachments({{attachmentId}})",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "companies({{companyId}})",
+                    "attachments({{attachmentId}})"
+                  ]
+                },
+                "description": "Update an existing attachment",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"fileName\": \"updated-document.pdf\"\n}"
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Delete attachment",
+              "request": {
+                "method": "DELETE",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "If-Match",
+                    "value": "*"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/companies({{companyId}})/attachments({{attachmentId}})",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "companies({{companyId}})",
+                    "attachments({{attachmentId}})"
+                  ]
+                },
+                "description": "Delete an attachment"
               },
               "response": []
             }
