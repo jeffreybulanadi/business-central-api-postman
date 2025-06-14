@@ -1503,6 +1503,308 @@
           ]
         }
       ]
+    },
+    {
+      "name": "Balance Sheet",
+      "description": "Balance sheet resource type for Business Central",
+      "item": [
+        {
+          "name": "balanceSheet resource type",
+          "description": "Represents a balance sheet in Business Central",
+          "item": [
+            {
+              "name": "Get balance sheets",
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/companies({{companyId}})/balanceSheets",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "companies({{companyId}})",
+                    "balanceSheets"
+                  ]
+                },
+                "description": "Get balance sheet information"
+              },
+              "response": []
+            },
+            {
+              "name": "Get balance sheet by ID",
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/companies({{companyId}})/balanceSheets({{balanceSheetId}})",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "companies({{companyId}})",
+                    "balanceSheets({{balanceSheetId}})"
+                  ]
+                },
+                "description": "Get a specific balance sheet by ID"
+              },
+              "response": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Bank Account",
+      "description": "Bank account resource type for Business Central",
+      "item": [
+        {
+          "name": "bankAccount resource type",
+          "description": "Represents a bank account in Business Central",
+          "item": [
+            {
+              "name": "Get bank accounts",
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/companies({{companyId}})/bankAccounts",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "companies({{companyId}})",
+                    "bankAccounts"
+                  ]
+                },
+                "description": "Get all bank accounts"
+              },
+              "response": []
+            },
+            {
+              "name": "Get bank account by ID",
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/companies({{companyId}})/bankAccounts({{bankAccountId}})",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "companies({{companyId}})",
+                    "bankAccounts({{bankAccountId}})"
+                  ]
+                },
+                "description": "Get a specific bank account by ID"
+              },
+              "response": []
+            },
+            {
+              "name": "Create bank account",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/companies({{companyId}})/bankAccounts",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "companies({{companyId}})",
+                    "bankAccounts"
+                  ]
+                },
+                "description": "Create a new bank account",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"number\": \"BANK001\",\n  \"displayName\": \"Main Bank Account\",\n  \"bankAccountNumber\": \"123456789\",\n  \"bankBranchNumber\": \"001\",\n  \"currencyCode\": \"USD\"\n}"
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Update bank account",
+              "request": {
+                "method": "PATCH",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "If-Match",
+                    "value": "*"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/companies({{companyId}})/bankAccounts({{bankAccountId}})",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "companies({{companyId}})",
+                    "bankAccounts({{bankAccountId}})"
+                  ]
+                },
+                "description": "Update an existing bank account",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"displayName\": \"Updated Bank Account Name\"\n}"
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Delete bank account",
+              "request": {
+                "method": "DELETE",
+                "header": [
+                  {
+                    "key": "If-Match",
+                    "value": "*"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/companies({{companyId}})/bankAccounts({{bankAccountId}})",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "companies({{companyId}})",
+                    "bankAccounts({{bankAccountId}})"
+                  ]
+                },
+                "description": "Delete a bank account"
+              },
+              "response": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Cash Flow Statement",
+      "description": "Cash flow statement resource type for Business Central",
+      "item": [
+        {
+          "name": "cashFlowStatement resource type",
+          "description": "Represents a cash flow statement in Business Central",
+          "item": [
+            {
+              "name": "Get cash flow statements",
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/companies({{companyId}})/cashFlowStatements",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "companies({{companyId}})",
+                    "cashFlowStatements"
+                  ]
+                },
+                "description": "Get cash flow statement information"
+              },
+              "response": []
+            },
+            {
+              "name": "Get cash flow statement by ID",
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/companies({{companyId}})/cashFlowStatements({{cashFlowStatementId}})",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "companies({{companyId}})",
+                    "cashFlowStatements({{cashFlowStatementId}})"
+                  ]
+                },
+                "description": "Get a specific cash flow statement by ID"
+              },
+              "response": []
+            },
+            {
+              "name": "Get cash flow statements with date filter",
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/companies({{companyId}})/cashFlowStatements?$filter=dateFilter eq '2024-01-01..2024-12-31'",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "companies({{companyId}})",
+                    "cashFlowStatements"
+                  ],
+                  "query": [
+                    {
+                      "key": "$filter",
+                      "value": "dateFilter eq '2024-01-01..2024-12-31'"
+                    }
+                  ]
+                },
+                "description": "Get cash flow statements with specific date range filter"
+              },
+              "response": []
+            }
+          ]
+        }
+      ]
     }
   ]
 }
