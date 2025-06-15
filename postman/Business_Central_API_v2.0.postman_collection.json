@@ -14,7 +14,7 @@
         "type": "string"
       },
       {
-        "key": "authUrl", 
+        "key": "authUrl",
         "value": "https://login.microsoftonline.com/{{tenantId}}/oauth2/v2.0/authorize",
         "type": "string"
       },
@@ -50,7 +50,7 @@
       },
       {
         "key": "authorizationUrl",
-        "value": "https://login.microsoftonline.com/{{tenantId}}/oauth2/v2.0/authorize", 
+        "value": "https://login.microsoftonline.com/{{tenantId}}/oauth2/v2.0/authorize",
         "type": "string"
       },
       {
@@ -708,803 +708,6 @@
       ]
     },
     {
-      "name": "Company",
-      "description": "Company resource type for Business Central",
-      "item": [
-        {
-          "name": "company resource type",
-          "description": "Represents a company in Business Central",
-          "item": [
-            {
-              "name": "Get companies",
-              "request": {
-                "method": "GET",
-                "header": [
-                  {
-                    "key": "Accept",
-                    "value": "application/json"
-                  }
-                ],
-                "url": {
-                  "raw": "{{baseUrl}}/companies",
-                  "host": [
-                    "{{baseUrl}}"
-                  ],
-                  "path": [
-                    "companies"
-                  ]
-                },
-                "description": "Get all companies"
-              },
-              "response": []
-            },
-            {
-              "name": "Get company by ID",
-              "request": {
-                "method": "GET",
-                "header": [
-                  {
-                    "key": "Accept",
-                    "value": "application/json"
-                  }
-                ],
-                "url": {
-                  "raw": "{{baseUrl}}/companies({{companyId}})",
-                  "host": [
-                    "{{baseUrl}}"
-                  ],
-                  "path": [
-                    "companies({{companyId}})"
-                  ]
-                },
-                "description": "Get a specific company by ID"
-              },
-              "response": []
-            },
-            {
-              "name": "Create company",
-              "request": {
-                "method": "POST",
-                "header": [
-                  {
-                    "key": "Accept",
-                    "value": "application/json"
-                  },
-                  {
-                    "key": "Content-Type",
-                    "value": "application/json"
-                  }
-                ],
-                "url": {
-                  "raw": "{{baseUrl}}/companies",
-                  "host": [
-                    "{{baseUrl}}"
-                  ],
-                  "path": [
-                    "companies"
-                  ]
-                },
-                "description": "Create a new company",
-                "body": {
-                  "mode": "raw",
-                  "raw": "{\n  \"displayName\": \"New Company Name\",\n  \"businessProfileId\": \"{{businessProfileId}}\"\n}"
-                }
-              },
-              "response": []
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "Customer",
-      "description": "Customer resource type for Business Central",
-      "item": [
-        {
-          "name": "customer resource type",
-          "description": "Represents a customer in Business Central",
-          "item": [
-            {
-              "name": "Get customers",
-              "request": {
-                "method": "GET",
-                "header": [
-                  {
-                    "key": "Accept",
-                    "value": "application/json"
-                  }
-                ],
-                "url": {
-                  "raw": "{{baseUrl}}/companies({{companyId}})/customers",
-                  "host": [
-                    "{{baseUrl}}"
-                  ],
-                  "path": [
-                    "companies({{companyId}})",
-                    "customers"
-                  ]
-                },
-                "description": "Get all customers"
-              },
-              "response": []
-            },
-            {
-              "name": "Get customer by ID",
-              "request": {
-                "method": "GET",
-                "header": [
-                  {
-                    "key": "Accept",
-                    "value": "application/json"
-                  }
-                ],
-                "url": {
-                  "raw": "{{baseUrl}}/companies({{companyId}})/customers({{customerId}})",
-                  "host": [
-                    "{{baseUrl}}"
-                  ],
-                  "path": [
-                    "companies({{companyId}})",
-                    "customers({{customerId}})"
-                  ]
-                },
-                "description": "Get a specific customer by ID"
-              },
-              "response": []
-            },
-            {
-              "name": "Create customer",
-              "request": {
-                "method": "POST",
-                "header": [
-                  {
-                    "key": "Accept",
-                    "value": "application/json"
-                  },
-                  {
-                    "key": "Content-Type",
-                    "value": "application/json"
-                  }
-                ],
-                "url": {
-                  "raw": "{{baseUrl}}/companies({{companyId}})/customers",
-                  "host": [
-                    "{{baseUrl}}"
-                  ],
-                  "path": [
-                    "companies({{companyId}})",
-                    "customers"
-                  ]
-                },
-                "description": "Create a new customer",
-                "body": {
-                  "mode": "raw",
-                  "raw": "{\n  \"displayName\": \"Customer Name\",\n  \"type\": \"Company\",\n  \"addressLine1\": \"123 Main Street\",\n  \"city\": \"Seattle\",\n  \"state\": \"WA\",\n  \"country\": \"US\",\n  \"postalCode\": \"98052\",\n  \"phoneNumber\": \"+1-555-123-4567\",\n  \"email\": \"customer@example.com\"\n}"
-                }
-              },
-              "response": []
-            },
-            {
-              "name": "Update customer",
-              "request": {
-                "method": "PATCH",
-                "header": [
-                  {
-                    "key": "Accept",
-                    "value": "application/json"
-                  },
-                  {
-                    "key": "Content-Type",
-                    "value": "application/json"
-                  },
-                  {
-                    "key": "If-Match",
-                    "value": "*"
-                  }
-                ],
-                "url": {
-                  "raw": "{{baseUrl}}/companies({{companyId}})/customers({{customerId}})",
-                  "host": [
-                    "{{baseUrl}}"
-                  ],
-                  "path": [
-                    "companies({{companyId}})",
-                    "customers({{customerId}})"
-                  ]
-                },
-                "description": "Update an existing customer",
-                "body": {
-                  "mode": "raw",
-                  "raw": "{\n  \"displayName\": \"Updated Customer Name\",\n  \"email\": \"updated@example.com\"\n}"
-                }
-              },
-              "response": []
-            },
-            {
-              "name": "Delete customer",
-              "request": {
-                "method": "DELETE",
-                "header": [
-                  {
-                    "key": "Accept",
-                    "value": "application/json"
-                  },
-                  {
-                    "key": "If-Match",
-                    "value": "*"
-                  }
-                ],
-                "url": {
-                  "raw": "{{baseUrl}}/companies({{companyId}})/customers({{customerId}})",
-                  "host": [
-                    "{{baseUrl}}"
-                  ],
-                  "path": [
-                    "companies({{companyId}})",
-                    "customers({{customerId}})"
-                  ]
-                },
-                "description": "Delete a customer"
-              },
-              "response": []
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "Item",
-      "description": "Item resource type for Business Central",
-      "item": [
-        {
-          "name": "item resource type",
-          "description": "Represents an item in Business Central",
-          "item": [
-            {
-              "name": "Get items",
-              "request": {
-                "method": "GET",
-                "header": [
-                  {
-                    "key": "Accept",
-                    "value": "application/json"
-                  }
-                ],
-                "url": {
-                  "raw": "{{baseUrl}}/companies({{companyId}})/items",
-                  "host": [
-                    "{{baseUrl}}"
-                  ],
-                  "path": [
-                    "companies({{companyId}})",
-                    "items"
-                  ]
-                },
-                "description": "Get all items"
-              },
-              "response": []
-            },
-            {
-              "name": "Get item by ID",
-              "request": {
-                "method": "GET",
-                "header": [
-                  {
-                    "key": "Accept",
-                    "value": "application/json"
-                  }
-                ],
-                "url": {
-                  "raw": "{{baseUrl}}/companies({{companyId}})/items({{itemId}})",
-                  "host": [
-                    "{{baseUrl}}"
-                  ],
-                  "path": [
-                    "companies({{companyId}})",
-                    "items({{itemId}})"
-                  ]
-                },
-                "description": "Get a specific item by ID"
-              },
-              "response": []
-            },
-            {
-              "name": "Create item",
-              "request": {
-                "method": "POST",
-                "header": [
-                  {
-                    "key": "Accept",
-                    "value": "application/json"
-                  },
-                  {
-                    "key": "Content-Type",
-                    "value": "application/json"
-                  }
-                ],
-                "url": {
-                  "raw": "{{baseUrl}}/companies({{companyId}})/items",
-                  "host": [
-                    "{{baseUrl}}"
-                  ],
-                  "path": [
-                    "companies({{companyId}})",
-                    "items"
-                  ]
-                },
-                "description": "Create a new item",
-                "body": {
-                  "mode": "raw",
-                  "raw": "{\n  \"number\": \"ITEM001\",\n  \"displayName\": \"Sample Item\",\n  \"type\": \"Inventory\",\n  \"unitPrice\": 10.5,\n  \"unitCost\": 7.25,\n  \"inventory\": 100,\n  \"blocked\": false\n}"
-                }
-              },
-              "response": []
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "Sales order",
-      "description": "Sales order resource type for Business Central",
-      "item": [
-        {
-          "name": "salesOrder resource type",
-          "description": "Represents a sales order in Business Central",
-          "item": [
-            {
-              "name": "Get sales orders",
-              "request": {
-                "method": "GET",
-                "header": [
-                  {
-                    "key": "Accept",
-                    "value": "application/json"
-                  }
-                ],
-                "url": {
-                  "raw": "{{baseUrl}}/companies({{companyId}})/salesOrders",
-                  "host": [
-                    "{{baseUrl}}"
-                  ],
-                  "path": [
-                    "companies({{companyId}})",
-                    "salesOrders"
-                  ]
-                },
-                "description": "Get all sales orders"
-              },
-              "response": []
-            },
-            {
-              "name": "Create sales order",
-              "request": {
-                "method": "POST",
-                "header": [
-                  {
-                    "key": "Accept",
-                    "value": "application/json"
-                  },
-                  {
-                    "key": "Content-Type",
-                    "value": "application/json"
-                  }
-                ],
-                "url": {
-                  "raw": "{{baseUrl}}/companies({{companyId}})/salesOrders",
-                  "host": [
-                    "{{baseUrl}}"
-                  ],
-                  "path": [
-                    "companies({{companyId}})",
-                    "salesOrders"
-                  ]
-                },
-                "description": "Create a new sales order",
-                "body": {
-                  "mode": "raw",
-                  "raw": "{\n  \"customerId\": \"{{customerId}}\",\n  \"orderDate\": \"2024-01-15\",\n  \"shipToName\": \"Customer Name\",\n  \"shipToAddressLine1\": \"123 Main Street\",\n  \"shipToCity\": \"Seattle\",\n  \"shipToState\": \"WA\",\n  \"shipToCountry\": \"US\",\n  \"shipToPostalCode\": \"98052\"\n}"
-                }
-              },
-              "response": []
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "Sales invoice",
-      "description": "Sales invoice resource type for Business Central",
-      "item": [
-        {
-          "name": "salesInvoice resource type",
-          "description": "Represents a sales invoice in Business Central",
-          "item": [
-            {
-              "name": "Get sales invoices",
-              "request": {
-                "method": "GET",
-                "header": [
-                  {
-                    "key": "Accept",
-                    "value": "application/json"
-                  }
-                ],
-                "url": {
-                  "raw": "{{baseUrl}}/companies({{companyId}})/salesInvoices",
-                  "host": [
-                    "{{baseUrl}}"
-                  ],
-                  "path": [
-                    "companies({{companyId}})",
-                    "salesInvoices"
-                  ]
-                },
-                "description": "Get all sales invoices"
-              },
-              "response": []
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "Sales quote",
-      "description": "Sales quote resource type for Business Central",
-      "item": [
-        {
-          "name": "salesQuote resource type",
-          "description": "Represents a sales quote in Business Central",
-          "item": [
-            {
-              "name": "Get sales quotes",
-              "request": {
-                "method": "GET",
-                "header": [
-                  {
-                    "key": "Accept",
-                    "value": "application/json"
-                  }
-                ],
-                "url": {
-                  "raw": "{{baseUrl}}/companies({{companyId}})/salesQuotes",
-                  "host": [
-                    "{{baseUrl}}"
-                  ],
-                  "path": [
-                    "companies({{companyId}})",
-                    "salesQuotes"
-                  ]
-                },
-                "description": "Get all sales quotes"
-              },
-              "response": []
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "Purchase order",
-      "description": "Purchase order resource type for Business Central",
-      "item": [
-        {
-          "name": "purchaseOrder resource type",
-          "description": "Represents a purchase order in Business Central",
-          "item": [
-            {
-              "name": "Get purchase orders",
-              "request": {
-                "method": "GET",
-                "header": [
-                  {
-                    "key": "Accept",
-                    "value": "application/json"
-                  }
-                ],
-                "url": {
-                  "raw": "{{baseUrl}}/companies({{companyId}})/purchaseOrders",
-                  "host": [
-                    "{{baseUrl}}"
-                  ],
-                  "path": [
-                    "companies({{companyId}})",
-                    "purchaseOrders"
-                  ]
-                },
-                "description": "Get all purchase orders"
-              },
-              "response": []
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "Purchase invoice",
-      "description": "Purchase invoice resource type for Business Central",
-      "item": [
-        {
-          "name": "purchaseInvoice resource type",
-          "description": "Represents a purchase invoice in Business Central",
-          "item": [
-            {
-              "name": "Get purchase invoices",
-              "request": {
-                "method": "GET",
-                "header": [
-                  {
-                    "key": "Accept",
-                    "value": "application/json"
-                  }
-                ],
-                "url": {
-                  "raw": "{{baseUrl}}/companies({{companyId}})/purchaseInvoices",
-                  "host": [
-                    "{{baseUrl}}"
-                  ],
-                  "path": [
-                    "companies({{companyId}})",
-                    "purchaseInvoices"
-                  ]
-                },
-                "description": "Get all purchase invoices"
-              },
-              "response": []
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "Vendor",
-      "description": "Vendor resource type for Business Central",
-      "item": [
-        {
-          "name": "vendor resource type",
-          "description": "Represents a vendor in Business Central",
-          "item": [
-            {
-              "name": "Get vendors",
-              "request": {
-                "method": "GET",
-                "header": [
-                  {
-                    "key": "Accept",
-                    "value": "application/json"
-                  }
-                ],
-                "url": {
-                  "raw": "{{baseUrl}}/companies({{companyId}})/vendors",
-                  "host": [
-                    "{{baseUrl}}"
-                  ],
-                  "path": [
-                    "companies({{companyId}})",
-                    "vendors"
-                  ]
-                },
-                "description": "Get all vendors"
-              },
-              "response": []
-            },
-            {
-              "name": "Create vendor",
-              "request": {
-                "method": "POST",
-                "header": [
-                  {
-                    "key": "Accept",
-                    "value": "application/json"
-                  },
-                  {
-                    "key": "Content-Type",
-                    "value": "application/json"
-                  }
-                ],
-                "url": {
-                  "raw": "{{baseUrl}}/companies({{companyId}})/vendors",
-                  "host": [
-                    "{{baseUrl}}"
-                  ],
-                  "path": [
-                    "companies({{companyId}})",
-                    "vendors"
-                  ]
-                },
-                "description": "Create a new vendor",
-                "body": {
-                  "mode": "raw",
-                  "raw": "{\n  \"displayName\": \"Vendor Name\",\n  \"addressLine1\": \"456 Vendor Street\",\n  \"city\": \"Portland\",\n  \"state\": \"OR\",\n  \"country\": \"US\",\n  \"postalCode\": \"97201\",\n  \"phoneNumber\": \"+1-555-987-6543\",\n  \"email\": \"vendor@example.com\"\n}"
-                }
-              },
-              "response": []
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "General ledger entry",
-      "description": "General ledger entry resource type for Business Central",
-      "item": [
-        {
-          "name": "generalLedgerEntry resource type",
-          "description": "Represents a general ledger entry in Business Central",
-          "item": [
-            {
-              "name": "Get general ledger entries",
-              "request": {
-                "method": "GET",
-                "header": [
-                  {
-                    "key": "Accept",
-                    "value": "application/json"
-                  }
-                ],
-                "url": {
-                  "raw": "{{baseUrl}}/companies({{companyId}})/generalLedgerEntries",
-                  "host": [
-                    "{{baseUrl}}"
-                  ],
-                  "path": [
-                    "companies({{companyId}})",
-                    "generalLedgerEntries"
-                  ]
-                },
-                "description": "Get general ledger entries"
-              },
-              "response": []
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "Journal",
-      "description": "Journal resource type for Business Central",
-      "item": [
-        {
-          "name": "journal resource type",
-          "description": "Represents a journal in Business Central",
-          "item": [
-            {
-              "name": "Get journals",
-              "request": {
-                "method": "GET",
-                "header": [
-                  {
-                    "key": "Accept",
-                    "value": "application/json"
-                  }
-                ],
-                "url": {
-                  "raw": "{{baseUrl}}/companies({{companyId}})/journals",
-                  "host": [
-                    "{{baseUrl}}"
-                  ],
-                  "path": [
-                    "companies({{companyId}})",
-                    "journals"
-                  ]
-                },
-                "description": "Get all journals"
-              },
-              "response": []
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "OData Query Examples",
-      "description": "OData query examples for Business Central API",
-      "item": [
-        {
-          "name": "query examples",
-          "description": "Examples of OData queries for filtering, selecting, and expanding data",
-          "item": [
-            {
-              "name": "Filter customers by balance",
-              "request": {
-                "method": "GET",
-                "header": [
-                  {
-                    "key": "Accept",
-                    "value": "application/json"
-                  }
-                ],
-                "url": {
-                  "raw": "{{baseUrl}}/companies({{companyId}})/customers?$filter=balance gt 1000",
-                  "host": [
-                    "{{baseUrl}}"
-                  ],
-                  "path": [
-                    "companies({{companyId}})",
-                    "customers?$filter=balance gt 1000"
-                  ]
-                },
-                "description": "Get customers with balance greater than 1000"
-              },
-              "response": []
-            },
-            {
-              "name": "Select specific customer fields",
-              "request": {
-                "method": "GET",
-                "header": [
-                  {
-                    "key": "Accept",
-                    "value": "application/json"
-                  }
-                ],
-                "url": {
-                  "raw": "{{baseUrl}}/companies({{companyId}})/customers?$select=id,displayName,email",
-                  "host": [
-                    "{{baseUrl}}"
-                  ],
-                  "path": [
-                    "companies({{companyId}})",
-                    "customers?$select=id,displayName,email"
-                  ]
-                },
-                "description": "Get only specific fields for customers"
-              },
-              "response": []
-            },
-            {
-              "name": "Get top 10 items ordered by name",
-              "request": {
-                "method": "GET",
-                "header": [
-                  {
-                    "key": "Accept",
-                    "value": "application/json"
-                  }
-                ],
-                "url": {
-                  "raw": "{{baseUrl}}/companies({{companyId}})/items?$top=10&$orderby=displayName",
-                  "host": [
-                    "{{baseUrl}}"
-                  ],
-                  "path": [
-                    "companies({{companyId}})",
-                    "items?$top=10&$orderby=displayName"
-                  ]
-                },
-                "description": "Get top 10 items sorted by display name"
-              },
-              "response": []
-            },
-            {
-              "name": "Expand customer with sales orders",
-              "request": {
-                "method": "GET",
-                "header": [
-                  {
-                    "key": "Accept",
-                    "value": "application/json"
-                  }
-                ],
-                "url": {
-                  "raw": "{{baseUrl}}/companies({{companyId}})/customers?$expand=salesOrders",
-                  "host": [
-                    "{{baseUrl}}"
-                  ],
-                  "path": [
-                    "companies({{companyId}})",
-                    "customers?$expand=salesOrders"
-                  ]
-                },
-                "description": "Get customers with their related sales orders"
-              },
-              "response": []
-            }
-          ]
-        }
-      ]
-    },
-    {
       "name": "Balance Sheet",
       "description": "Balance sheet resource type for Business Central",
       "item": [
@@ -1799,6 +1002,803 @@
                   ]
                 },
                 "description": "Get cash flow statements with specific date range filter"
+              },
+              "response": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Company",
+      "description": "Company resource type for Business Central",
+      "item": [
+        {
+          "name": "company resource type",
+          "description": "Represents a company in Business Central",
+          "item": [
+            {
+              "name": "Get companies",
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/companies",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "companies"
+                  ]
+                },
+                "description": "Get all companies"
+              },
+              "response": []
+            },
+            {
+              "name": "Get company by ID",
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/companies({{companyId}})",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "companies({{companyId}})"
+                  ]
+                },
+                "description": "Get a specific company by ID"
+              },
+              "response": []
+            },
+            {
+              "name": "Create company",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/companies",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "companies"
+                  ]
+                },
+                "description": "Create a new company",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"displayName\": \"New Company Name\",\n  \"businessProfileId\": \"{{businessProfileId}}\"\n}"
+                }
+              },
+              "response": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Customer",
+      "description": "Customer resource type for Business Central",
+      "item": [
+        {
+          "name": "customer resource type",
+          "description": "Represents a customer in Business Central",
+          "item": [
+            {
+              "name": "Get customers",
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/companies({{companyId}})/customers",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "companies({{companyId}})",
+                    "customers"
+                  ]
+                },
+                "description": "Get all customers"
+              },
+              "response": []
+            },
+            {
+              "name": "Get customer by ID",
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/companies({{companyId}})/customers({{customerId}})",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "companies({{companyId}})",
+                    "customers({{customerId}})"
+                  ]
+                },
+                "description": "Get a specific customer by ID"
+              },
+              "response": []
+            },
+            {
+              "name": "Create customer",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/companies({{companyId}})/customers",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "companies({{companyId}})",
+                    "customers"
+                  ]
+                },
+                "description": "Create a new customer",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"displayName\": \"Customer Name\",\n  \"type\": \"Company\",\n  \"addressLine1\": \"123 Main Street\",\n  \"city\": \"Seattle\",\n  \"state\": \"WA\",\n  \"country\": \"US\",\n  \"postalCode\": \"98052\",\n  \"phoneNumber\": \"+1-555-123-4567\",\n  \"email\": \"customer@example.com\"\n}"
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Update customer",
+              "request": {
+                "method": "PATCH",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "If-Match",
+                    "value": "*"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/companies({{companyId}})/customers({{customerId}})",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "companies({{companyId}})",
+                    "customers({{customerId}})"
+                  ]
+                },
+                "description": "Update an existing customer",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"displayName\": \"Updated Customer Name\",\n  \"email\": \"updated@example.com\"\n}"
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Delete customer",
+              "request": {
+                "method": "DELETE",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "If-Match",
+                    "value": "*"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/companies({{companyId}})/customers({{customerId}})",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "companies({{companyId}})",
+                    "customers({{customerId}})"
+                  ]
+                },
+                "description": "Delete a customer"
+              },
+              "response": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "General ledger entry",
+      "description": "General ledger entry resource type for Business Central",
+      "item": [
+        {
+          "name": "generalLedgerEntry resource type",
+          "description": "Represents a general ledger entry in Business Central",
+          "item": [
+            {
+              "name": "Get general ledger entries",
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/companies({{companyId}})/generalLedgerEntries",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "companies({{companyId}})",
+                    "generalLedgerEntries"
+                  ]
+                },
+                "description": "Get general ledger entries"
+              },
+              "response": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Item",
+      "description": "Item resource type for Business Central",
+      "item": [
+        {
+          "name": "item resource type",
+          "description": "Represents an item in Business Central",
+          "item": [
+            {
+              "name": "Get items",
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/companies({{companyId}})/items",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "companies({{companyId}})",
+                    "items"
+                  ]
+                },
+                "description": "Get all items"
+              },
+              "response": []
+            },
+            {
+              "name": "Get item by ID",
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/companies({{companyId}})/items({{itemId}})",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "companies({{companyId}})",
+                    "items({{itemId}})"
+                  ]
+                },
+                "description": "Get a specific item by ID"
+              },
+              "response": []
+            },
+            {
+              "name": "Create item",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/companies({{companyId}})/items",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "companies({{companyId}})",
+                    "items"
+                  ]
+                },
+                "description": "Create a new item",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"number\": \"ITEM001\",\n  \"displayName\": \"Sample Item\",\n  \"type\": \"Inventory\",\n  \"unitPrice\": 10.5,\n  \"unitCost\": 7.25,\n  \"inventory\": 100,\n  \"blocked\": false\n}"
+                }
+              },
+              "response": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Journal",
+      "description": "Journal resource type for Business Central",
+      "item": [
+        {
+          "name": "journal resource type",
+          "description": "Represents a journal in Business Central",
+          "item": [
+            {
+              "name": "Get journals",
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/companies({{companyId}})/journals",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "companies({{companyId}})",
+                    "journals"
+                  ]
+                },
+                "description": "Get all journals"
+              },
+              "response": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "OData Query Examples",
+      "description": "OData query examples for Business Central API",
+      "item": [
+        {
+          "name": "query examples",
+          "description": "Examples of OData queries for filtering, selecting, and expanding data",
+          "item": [
+            {
+              "name": "Filter customers by balance",
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/companies({{companyId}})/customers?$filter=balance gt 1000",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "companies({{companyId}})",
+                    "customers?$filter=balance gt 1000"
+                  ]
+                },
+                "description": "Get customers with balance greater than 1000"
+              },
+              "response": []
+            },
+            {
+              "name": "Select specific customer fields",
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/companies({{companyId}})/customers?$select=id,displayName,email",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "companies({{companyId}})",
+                    "customers?$select=id,displayName,email"
+                  ]
+                },
+                "description": "Get only specific fields for customers"
+              },
+              "response": []
+            },
+            {
+              "name": "Get top 10 items ordered by name",
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/companies({{companyId}})/items?$top=10&$orderby=displayName",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "companies({{companyId}})",
+                    "items?$top=10&$orderby=displayName"
+                  ]
+                },
+                "description": "Get top 10 items sorted by display name"
+              },
+              "response": []
+            },
+            {
+              "name": "Expand customer with sales orders",
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/companies({{companyId}})/customers?$expand=salesOrders",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "companies({{companyId}})",
+                    "customers?$expand=salesOrders"
+                  ]
+                },
+                "description": "Get customers with their related sales orders"
+              },
+              "response": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Purchase invoice",
+      "description": "Purchase invoice resource type for Business Central",
+      "item": [
+        {
+          "name": "purchaseInvoice resource type",
+          "description": "Represents a purchase invoice in Business Central",
+          "item": [
+            {
+              "name": "Get purchase invoices",
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/companies({{companyId}})/purchaseInvoices",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "companies({{companyId}})",
+                    "purchaseInvoices"
+                  ]
+                },
+                "description": "Get all purchase invoices"
+              },
+              "response": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Purchase order",
+      "description": "Purchase order resource type for Business Central",
+      "item": [
+        {
+          "name": "purchaseOrder resource type",
+          "description": "Represents a purchase order in Business Central",
+          "item": [
+            {
+              "name": "Get purchase orders",
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/companies({{companyId}})/purchaseOrders",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "companies({{companyId}})",
+                    "purchaseOrders"
+                  ]
+                },
+                "description": "Get all purchase orders"
+              },
+              "response": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Sales invoice",
+      "description": "Sales invoice resource type for Business Central",
+      "item": [
+        {
+          "name": "salesInvoice resource type",
+          "description": "Represents a sales invoice in Business Central",
+          "item": [
+            {
+              "name": "Get sales invoices",
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/companies({{companyId}})/salesInvoices",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "companies({{companyId}})",
+                    "salesInvoices"
+                  ]
+                },
+                "description": "Get all sales invoices"
+              },
+              "response": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Sales order",
+      "description": "Sales order resource type for Business Central",
+      "item": [
+        {
+          "name": "salesOrder resource type",
+          "description": "Represents a sales order in Business Central",
+          "item": [
+            {
+              "name": "Get sales orders",
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/companies({{companyId}})/salesOrders",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "companies({{companyId}})",
+                    "salesOrders"
+                  ]
+                },
+                "description": "Get all sales orders"
+              },
+              "response": []
+            },
+            {
+              "name": "Create sales order",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/companies({{companyId}})/salesOrders",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "companies({{companyId}})",
+                    "salesOrders"
+                  ]
+                },
+                "description": "Create a new sales order",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"customerId\": \"{{customerId}}\",\n  \"orderDate\": \"2024-01-15\",\n  \"shipToName\": \"Customer Name\",\n  \"shipToAddressLine1\": \"123 Main Street\",\n  \"shipToCity\": \"Seattle\",\n  \"shipToState\": \"WA\",\n  \"shipToCountry\": \"US\",\n  \"shipToPostalCode\": \"98052\"\n}"
+                }
+              },
+              "response": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Sales quote",
+      "description": "Sales quote resource type for Business Central",
+      "item": [
+        {
+          "name": "salesQuote resource type",
+          "description": "Represents a sales quote in Business Central",
+          "item": [
+            {
+              "name": "Get sales quotes",
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/companies({{companyId}})/salesQuotes",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "companies({{companyId}})",
+                    "salesQuotes"
+                  ]
+                },
+                "description": "Get all sales quotes"
+              },
+              "response": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Vendor",
+      "description": "Vendor resource type for Business Central",
+      "item": [
+        {
+          "name": "vendor resource type",
+          "description": "Represents a vendor in Business Central",
+          "item": [
+            {
+              "name": "Get vendors",
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/companies({{companyId}})/vendors",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "companies({{companyId}})",
+                    "vendors"
+                  ]
+                },
+                "description": "Get all vendors"
+              },
+              "response": []
+            },
+            {
+              "name": "Create vendor",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/companies({{companyId}})/vendors",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "companies({{companyId}})",
+                    "vendors"
+                  ]
+                },
+                "description": "Create a new vendor",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"displayName\": \"Vendor Name\",\n  \"addressLine1\": \"456 Vendor Street\",\n  \"city\": \"Portland\",\n  \"state\": \"OR\",\n  \"country\": \"US\",\n  \"postalCode\": \"97201\",\n  \"phoneNumber\": \"+1-555-987-6543\",\n  \"email\": \"vendor@example.com\"\n}"
+                }
               },
               "response": []
             }
