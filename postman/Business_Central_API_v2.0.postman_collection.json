@@ -708,7 +708,7 @@
       ]
     },
     {
-      "name": "Balance Sheet",
+      "name": "Balance sheet",
       "description": "Balance sheet resource type for Business Central",
       "item": [
         {
@@ -768,7 +768,7 @@
       ]
     },
     {
-      "name": "Bank Account",
+      "name": "Bank account",
       "description": "Bank account resource type for Business Central",
       "item": [
         {
@@ -920,7 +920,7 @@
       ]
     },
     {
-      "name": "Cash Flow Statement",
+      "name": "Cash flow statement",
       "description": "Cash flow statement resource type for Business Central",
       "item": [
         {
@@ -1091,6 +1091,270 @@
                   "mode": "raw",
                   "raw": "{\n  \"displayName\": \"New Company Name\",\n  \"businessProfileId\": \"{{businessProfileId}}\"\n}"
                 }
+              },
+              "response": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Company information",
+      "description": "Company information resource type for Business Central",
+      "item": [
+        {
+          "name": "companyInformation resource type",
+          "description": "Represents a company information in Business Central",
+          "item": [
+            {
+              "name": "Get company information",
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/companies({{companyId}})/companyInformation",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "companies({{companyId}})",
+                    "companyInformation"
+                  ]
+                },
+                "description": "Get company information"
+              },
+              "response": []
+            },
+            {
+              "name": "Update company information",
+              "request": {
+                "method": "PATCH",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "If-Match",
+                    "value": "*"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/companies({{companyId}})/companyInformation({{companyInformationId}})",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "companies({{companyId}})",
+                    "companyInformation({{companyInformationId}})"
+                  ]
+                },
+                "description": "Update company information",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"displayName\": \"Updated Company Name\",\n  \"email\": \"updated@company.com\",\n  \"phoneNumber\": \"+1-555-123-4567\"\n}"
+                }
+              },
+              "response": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Contact",
+      "description": "Contact resource type for Business Central",
+      "item": [
+        {
+          "name": "contact resource type",
+          "description": "Represents a contact in Business Central",
+          "item": [
+            {
+              "name": "Get contacts",
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/companies({{companyId}})/contacts",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "companies({{companyId}})",
+                    "contacts"
+                  ]
+                },
+                "description": "Get all contacts"
+              },
+              "response": []
+            },
+            {
+              "name": "Get contact by ID",
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/companies({{companyId}})/contacts({{contactId}})",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "companies({{companyId}})",
+                    "contacts({{contactId}})"
+                  ]
+                },
+                "description": "Get a specific contact by ID"
+              },
+              "response": []
+            },
+            {
+              "name": "Create contact",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/companies({{companyId}})/contacts",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "companies({{companyId}})",
+                    "contacts"
+                  ]
+                },
+                "description": "Create a new contact",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"number\": \"CONT001\",\n  \"displayName\": \"John Doe\",\n  \"type\": \"Person\",\n  \"email\": \"john.doe@example.com\",\n  \"phoneNumber\": \"+1-555-123-4567\",\n  \"addressLine1\": \"123 Main Street\",\n  \"city\": \"Seattle\",\n  \"state\": \"WA\",\n  \"country\": \"US\",\n  \"postalCode\": \"98052\"\n}"
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Update contact",
+              "request": {
+                "method": "PATCH",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "If-Match",
+                    "value": "*"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/companies({{companyId}})/contacts({{contactId}})",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "companies({{companyId}})",
+                    "contacts({{contactId}})"
+                  ]
+                },
+                "description": "Update an existing contact",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"displayName\": \"Updated Contact Name\",\n  \"email\": \"updated@example.com\"\n}"
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Delete contact",
+              "request": {
+                "method": "DELETE",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "If-Match",
+                    "value": "*"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/companies({{companyId}})/contacts({{contactId}})",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "companies({{companyId}})",
+                    "contacts({{contactId}})"
+                  ]
+                },
+                "description": "Delete a contact"
+              },
+              "response": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Contact information",
+      "description": "Contact information resource type for Business Central",
+      "item": [
+        {
+          "name": "contactInformation resource type",
+          "description": "Represents a contact information in Business Central",
+          "item": [
+            {
+              "name": "Get contact information",
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/companies({{companyId}})/contactInformation",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "companies({{companyId}})",
+                    "contactInformation"
+                  ]
+                },
+                "description": "Get contact information"
               },
               "response": []
             }
