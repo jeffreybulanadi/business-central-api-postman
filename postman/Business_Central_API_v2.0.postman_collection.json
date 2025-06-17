@@ -1363,6 +1363,462 @@
       ]
     },
     {
+      "name": "Country/region",
+      "description": "Country/region resource type for Business Central",
+      "item": [
+        {
+          "name": "countryRegion resource type",
+          "description": "Represents a country/region in Business Central",
+          "item": [
+            {
+              "name": "Get countries/regions",
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/companies({{companyId}})/countriesRegions",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "companies({{companyId}})",
+                    "countriesRegions"
+                  ]
+                },
+                "description": "Get all countries/regions"
+              },
+              "response": []
+            },
+            {
+              "name": "Get country/region by ID",
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/companies({{companyId}})/countriesRegions({{countryRegionId}})",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "companies({{companyId}})",
+                    "countriesRegions({{countryRegionId}})"
+                  ]
+                },
+                "description": "Get a specific country/region by ID"
+              },
+              "response": []
+            },
+            {
+              "name": "Create country/region",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/companies({{companyId}})/countriesRegions",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "companies({{companyId}})",
+                    "countriesRegions"
+                  ]
+                },
+                "description": "Create a new country/region",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"code\": \"US\",\n  \"displayName\": \"United States\",\n  \"addressFormat\": \"City+County+Post Code\"\n}"
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Update country/region",
+              "request": {
+                "method": "PATCH",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "If-Match",
+                    "value": "*"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/companies({{companyId}})/countriesRegions({{countryRegionId}})",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "companies({{companyId}})",
+                    "countriesRegions({{countryRegionId}})"
+                  ]
+                },
+                "description": "Update an existing country/region",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"displayName\": \"Updated Country Name\"\n}"
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Delete country/region",
+              "request": {
+                "method": "DELETE",
+                "header": [
+                  {
+                    "key": "If-Match",
+                    "value": "*"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/companies({{companyId}})/countriesRegions({{countryRegionId}})",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "companies({{companyId}})",
+                    "countriesRegions({{countryRegionId}})"
+                  ]
+                },
+                "description": "Delete a country/region"
+              },
+              "response": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Currency",
+      "description": "Currency resource type for Business Central",
+      "item": [
+        {
+          "name": "currency resource type",
+          "description": "Represents a currency in Business Central",
+          "item": [
+            {
+              "name": "Get currencies",
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/companies({{companyId}})/currencies",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "companies({{companyId}})",
+                    "currencies"
+                  ]
+                },
+                "description": "Get all currencies"
+              },
+              "response": []
+            },
+            {
+              "name": "Get currency by ID",
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/companies({{companyId}})/currencies({{currencyId}})",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "companies({{companyId}})",
+                    "currencies({{currencyId}})"
+                  ]
+                },
+                "description": "Get a specific currency by ID"
+              },
+              "response": []
+            },
+            {
+              "name": "Create currency",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/companies({{companyId}})/currencies",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "companies({{companyId}})",
+                    "currencies"
+                  ]
+                },
+                "description": "Create a new currency",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"code\": \"EUR\",\n  \"displayName\": \"Euro\",\n  \"symbol\": \"\"\n}"
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Update currency",
+              "request": {
+                "method": "PATCH",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "If-Match",
+                    "value": "*"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/companies({{companyId}})/currencies({{currencyId}})",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "companies({{companyId}})",
+                    "currencies({{currencyId}})"
+                  ]
+                },
+                "description": "Update an existing currency",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"displayName\": \"Updated Currency Name\"\n}"
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Delete currency",
+              "request": {
+                "method": "DELETE",
+                "header": [
+                  {
+                    "key": "If-Match",
+                    "value": "*"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/companies({{companyId}})/currencies({{currencyId}})",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "companies({{companyId}})",
+                    "currencies({{currencyId}})"
+                  ]
+                },
+                "description": "Delete a currency"
+              },
+              "response": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Currency exchange rate",
+      "description": "Currency exchange rate resource type for Business Central",
+      "item": [
+        {
+          "name": "currencyExchangeRate resource type",
+          "description": "Represents a currency exchange rate in Business Central",
+          "item": [
+            {
+              "name": "Get currency exchange rates",
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/companies({{companyId}})/currencyExchangeRates",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "companies({{companyId}})",
+                    "currencyExchangeRates"
+                  ]
+                },
+                "description": "Get all currency exchange rates"
+              },
+              "response": []
+            },
+            {
+              "name": "Get currency exchange rate by ID",
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/companies({{companyId}})/currencyExchangeRates({{currencyExchangeRateId}})",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "companies({{companyId}})",
+                    "currencyExchangeRates({{currencyExchangeRateId}})"
+                  ]
+                },
+                "description": "Get a specific currency exchange rate by ID"
+              },
+              "response": []
+            },
+            {
+              "name": "Create currency exchange rate",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/companies({{companyId}})/currencyExchangeRates",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "companies({{companyId}})",
+                    "currencyExchangeRates"
+                  ]
+                },
+                "description": "Create a new currency exchange rate",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"currencyCode\": \"EUR\",\n  \"startingDate\": \"2024-01-01\",\n  \"exchangeRateAmount\": 1.1,\n  \"relationalExchangeRateAmount\": 1\n}"
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Update currency exchange rate",
+              "request": {
+                "method": "PATCH",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "If-Match",
+                    "value": "*"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/companies({{companyId}})/currencyExchangeRates({{currencyExchangeRateId}})",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "companies({{companyId}})",
+                    "currencyExchangeRates({{currencyExchangeRateId}})"
+                  ]
+                },
+                "description": "Update an existing currency exchange rate",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"exchangeRateAmount\": 1.15\n}"
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Delete currency exchange rate",
+              "request": {
+                "method": "DELETE",
+                "header": [
+                  {
+                    "key": "If-Match",
+                    "value": "*"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/companies({{companyId}})/currencyExchangeRates({{currencyExchangeRateId}})",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "companies({{companyId}})",
+                    "currencyExchangeRates({{currencyExchangeRateId}})"
+                  ]
+                },
+                "description": "Delete a currency exchange rate"
+              },
+              "response": []
+            }
+          ]
+        }
+      ]
+    },
+    {
       "name": "Customer",
       "description": "Customer resource type for Business Central",
       "item": [
