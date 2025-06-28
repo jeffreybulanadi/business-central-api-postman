@@ -1975,6 +1975,163 @@
       ]
     },
     {
+      "name": "Customer contact",
+      "description": "Customer contact resource type for Business Central",
+      "item": [
+        {
+          "name": "customerContact resource type",
+          "description": "Represents a customer contact in Business Central",
+          "item": [
+            {
+              "name": "Get customer contacts",
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/companies({{companyId}})/customers({{customerId}})/customerContacts",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "companies({{companyId}})",
+                    "customers({{customerId}})",
+                    "customerContacts"
+                  ]
+                },
+                "description": "Get all contacts for a specific customer"
+              },
+              "response": []
+            },
+            {
+              "name": "Get customer contact by ID",
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/companies({{companyId}})/customers({{customerId}})/customerContacts({{customerContactId}})",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "companies({{companyId}})",
+                    "customers({{customerId}})",
+                    "customerContacts({{customerContactId}})"
+                  ]
+                },
+                "description": "Get a specific customer contact by ID"
+              },
+              "response": []
+            },
+            {
+              "name": "Create customer contact",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/companies({{companyId}})/customers({{customerId}})/customerContacts",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "companies({{companyId}})",
+                    "customers({{customerId}})",
+                    "customerContacts"
+                  ]
+                },
+                "description": "Create a new customer contact",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"contactId\": \"{{contactId}}\",\n  \"relatedType\": \"Customer\",\n  \"relatedId\": \"{{customerId}}\",\n  \"isPrimary\": true\n}"
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Update customer contact",
+              "request": {
+                "method": "PATCH",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "If-Match",
+                    "value": "*"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/companies({{companyId}})/customers({{customerId}})/customerContacts({{customerContactId}})",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "companies({{companyId}})",
+                    "customers({{customerId}})",
+                    "customerContacts({{customerContactId}})"
+                  ]
+                },
+                "description": "Update an existing customer contact",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"isPrimary\": false\n}"
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Delete customer contact",
+              "request": {
+                "method": "DELETE",
+                "header": [
+                  {
+                    "key": "If-Match",
+                    "value": "*"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/companies({{companyId}})/customers({{customerId}})/customerContacts({{customerContactId}})",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "companies({{companyId}})",
+                    "customers({{customerId}})",
+                    "customerContacts({{customerContactId}})"
+                  ]
+                },
+                "description": "Delete a customer contact"
+              },
+              "response": []
+            }
+          ]
+        }
+      ]
+    },
+    {
       "name": "General ledger entry",
       "description": "General ledger entry resource type for Business Central",
       "item": [
