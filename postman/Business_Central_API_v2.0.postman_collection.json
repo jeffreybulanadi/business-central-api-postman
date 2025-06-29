@@ -1,8 +1,8 @@
 {
   "info": {
     "name": "Microsoft Dynamics 365 Business Central API v2.0",
-    "description": "# Welcome to the API (v2.0) for Business Central\n\n👨‍💻 **Created by:** Jeffrey Bulanadi  \n📅 **Last Updated:** June 29, 2025\n\n## 🚀 Create Connect Apps with Business Central\n\nWith Business Central you can create **Connect apps**. Connect apps establish a point-to-point connection between Dynamics 365 Business Central and a third party solution or service and is typically created using standard REST API to interchange data. Any coding language capable of calling REST APIs can be used to develop your Connect app.\n\n💡 **For more information** to get started with Connect apps, see [Developing connect apps for Dynamics 365 Business Central](https://learn.microsoft.com/en-us/dynamics365/business-central/dev-itpro/developer/devenv-develop-connect-apps).\n\n---\n\n## 📚 Important Resources\n\n### 🔐 Microsoft APIs Terms of Use\nBefore you start using the Business Central APIs, familiarize yourself with the [Microsoft APIs Terms of Use](https://learn.microsoft.com/en-us/legal/microsoft-apis/terms-of-use).\n\n### ⚡ Enabling APIs\nLearn more about enabling APIs for Business Central in [Enabling the APIs for Dynamics 365 Business Central](https://learn.microsoft.com/en-us/dynamics365/business-central/dev-itpro/administration/enabling-apis-for-dynamics-nav).\n\n### 🔧 Extending APIs\nExtending APIs with additional fields isn't currently possible in Business Central. If you need this, you must copy the AL code for the API and create a custom API based on that.\n\n### 🔄 Transition from API v1.0 to API v2.0\nLearn more about transitioning from API v1.0 to API v2.0 in [Transition from API v1.0 to API v2.0](https://learn.microsoft.com/en-us/dynamics365/business-central/dev-itpro/administration/transition-api-v1-to-v2).\n\n---\n\n## 🎯 Collection Features\n\n### 📊 **30+ Business Central Resources**\n- **Financial Management:** Balance Sheet, Cash Flow, Bank Accounts, Currency Management\n- **Customer Relations:** Customers, Contacts, Company Information, Customer Contacts\n- **Inventory & Sales:** Items, Sales Orders/Invoices/Quotes, Purchase Management\n- **System Integration:** Attachments, General Ledger, Journals, Accounting Periods\n- **Geographic Data:** Countries/Regions with comprehensive CRUD operations\n\n### 🔑 **Pre-configured OAuth2 Authentication**\n- Microsoft Identity Platform integration\n- Automatic token management and refresh\n- Environment-based configuration\n\n### 📋 **Advanced Query Support**\n- OData filtering, sorting, and expansion examples\n- Comprehensive CRUD operations\n- Real-world usage patterns\n\n### 🎨 **Professional Organization**\n- Alphabetically sorted for easy navigation\n- Consistent naming conventions\n- Complete API coverage based on official documentation\n\n---\n\n💡 **Tip:** For inspiration and examples, see the open source [ALAppExtensions](https://github.com/Microsoft/ALAppExtensions) repo. Here you'll find examples of API pages written in AL.\n\n📖 **Official Documentation:** https://learn.microsoft.com/en-us/dynamics365/business-central/dev-itpro/api-reference/v2.0/\n\n---\n\n## 🙏 Acknowledgments\n\nThis comprehensive collection was meticulously crafted and organized by **Jeffrey Bulanadi**, who dedicated significant effort to ensure complete API coverage, professional organization, and seamless user experience for the Business Central developer community.",
-    "version": "2.0.1.250629",
+    "description": "# Welcome to the API (v2.0) for Business Central\n\n👨‍💻 **Created by:** Jeffrey Bulanadi  \n📅 **Last Updated:** June 30, 2025\n\n## 🚀 Create Connect Apps with Business Central\n\nWith Business Central you can create **Connect apps**. Connect apps establish a point-to-point connection between Dynamics 365 Business Central and a third party solution or service and is typically created using standard REST API to interchange data. Any coding language capable of calling REST APIs can be used to develop your Connect app.\n\n💡 **For more information** to get started with Connect apps, see [Developing connect apps for Dynamics 365 Business Central](https://learn.microsoft.com/en-us/dynamics365/business-central/dev-itpro/developer/devenv-develop-connect-apps).\n\n---\n\n## 📚 Important Resources\n\n### 🔐 Microsoft APIs Terms of Use\nBefore you start using the Business Central APIs, familiarize yourself with the [Microsoft APIs Terms of Use](https://learn.microsoft.com/en-us/legal/microsoft-apis/terms-of-use).\n\n### ⚡ Enabling APIs\nLearn more about enabling APIs for Business Central in [Enabling the APIs for Dynamics 365 Business Central](https://learn.microsoft.com/en-us/dynamics365/business-central/dev-itpro/administration/enabling-apis-for-dynamics-nav).\n\n### 🔧 Extending APIs\nExtending APIs with additional fields isn't currently possible in Business Central. If you need this, you must copy the AL code for the API and create a custom API based on that.\n\n### 🔄 Transition from API v1.0 to API v2.0\nLearn more about transitioning from API v1.0 to API v2.0 in [Transition from API v1.0 to API v2.0](https://learn.microsoft.com/en-us/dynamics365/business-central/dev-itpro/administration/transition-api-v1-to-v2).\n\n---\n\n## 🎯 Collection Features\n\n### 📊 **30+ Business Central Resources**\n- **Financial Management:** Balance Sheet, Cash Flow, Bank Accounts, Currency Management, Customer Payments\n- **Customer Relations:** Customers, Contacts, Company Information, Customer Contacts, Customer Financial Details\n- **Inventory & Sales:** Items, Sales Orders/Invoices/Quotes, Purchase Management\n- **System Integration:** Attachments, General Ledger, Journals, Accounting Periods\n- **Geographic Data:** Countries/Regions with comprehensive CRUD operations\n\n### 🔑 **Pre-configured OAuth2 Authentication**\n- Microsoft Identity Platform integration\n- Automatic token management and refresh\n- Environment-based configuration\n\n### 📋 **Advanced Query Support**\n- OData filtering, sorting, and expansion examples\n- Comprehensive CRUD operations\n- Real-world usage patterns\n\n### 🎨 **Professional Organization**\n- Alphabetically sorted for easy navigation\n- Consistent naming conventions\n- Complete API coverage based on official documentation\n\n---\n\n💡 **Tip:** For inspiration and examples, see the open source [ALAppExtensions](https://github.com/Microsoft/ALAppExtensions) repo. Here you'll find examples of API pages written in AL.\n\n📖 **Official Documentation:** https://learn.microsoft.com/en-us/dynamics365/business-central/dev-itpro/api-reference/v2.0/\n\n---\n\n## 📝 About This Collection\n\nDeveloped and maintained by **Jeffrey Bulanadi** to provide comprehensive coverage of the Microsoft Dynamics 365 Business Central API v2.0 endpoints with professional organization and developer-friendly features.",
+    "version": "2.0.3.250630",
     "author": "Jeffrey Bulanadi",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
   },
@@ -2133,6 +2133,278 @@
       ]
     },
     {
+      "name": "Customer financial detail",
+      "description": "Customer financial detail resource type for Business Central",
+      "item": [
+        {
+          "name": "customerFinancialDetail resource type",
+          "description": "Represents a customer financial detail in Business Central",
+          "item": [
+            {
+              "name": "Get customer financial details",
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/companies({{companyId}})/customerFinancialDetails",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "companies({{companyId}})",
+                    "customerFinancialDetails"
+                  ]
+                },
+                "description": "Get all customer financial details"
+              },
+              "response": []
+            },
+            {
+              "name": "Get customer financial detail by ID",
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/companies({{companyId}})/customerFinancialDetails({{customerFinancialDetailId}})",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "companies({{companyId}})",
+                    "customerFinancialDetails({{customerFinancialDetailId}})"
+                  ]
+                },
+                "description": "Get a specific customer financial detail by ID"
+              },
+              "response": []
+            },
+            {
+              "name": "Get customer financial detail by customer number",
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/companies({{companyId}})/customerFinancialDetails?$filter=number eq '{{customerNumber}}'",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "companies({{companyId}})",
+                    "customerFinancialDetails"
+                  ],
+                  "query": [
+                    {
+                      "key": "$filter",
+                      "value": "number eq '{{customerNumber}}'"
+                    }
+                  ]
+                },
+                "description": "Get customer financial details by customer number"
+              },
+              "response": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Customer payment",
+      "description": "Customer payment resource type for Business Central",
+      "item": [
+        {
+          "name": "customerPayment resource type",
+          "description": "Represents a customer payment in Business Central",
+          "item": [
+            {
+              "name": "Get customer payments",
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/companies({{companyId}})/customerPayments",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "companies({{companyId}})",
+                    "customerPayments"
+                  ]
+                },
+                "description": "Get all customer payments"
+              },
+              "response": []
+            },
+            {
+              "name": "Get customer payment by ID",
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/companies({{companyId}})/customerPayments({{customerPaymentId}})",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "companies({{companyId}})",
+                    "customerPayments({{customerPaymentId}})"
+                  ]
+                },
+                "description": "Get a specific customer payment by ID"
+              },
+              "response": []
+            },
+            {
+              "name": "Get customer payments by customer",
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/companies({{companyId}})/customerPayments?$filter=customerId eq {{customerId}}",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "companies({{companyId}})",
+                    "customerPayments"
+                  ],
+                  "query": [
+                    {
+                      "key": "$filter",
+                      "value": "customerId eq {{customerId}}"
+                    }
+                  ]
+                },
+                "description": "Get customer payments for a specific customer"
+              },
+              "response": []
+            },
+            {
+              "name": "Create customer payment",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/companies({{companyId}})/customerPayments",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "companies({{companyId}})",
+                    "customerPayments"
+                  ]
+                },
+                "description": "Create a new customer payment",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"journalId\": \"{{journalId}}\",\n  \"customerId\": \"{{customerId}}\",\n  \"customerNumber\": \"{{customerNumber}}\",\n  \"postingDate\": \"2024-06-30\",\n  \"documentNumber\": \"PMT001\",\n  \"amount\": 1000.00,\n  \"appliesToInvoiceId\": \"{{invoiceId}}\",\n  \"description\": \"Customer payment for invoice\",\n  \"comment\": \"Payment received via bank transfer\"\n}"
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Update customer payment",
+              "request": {
+                "method": "PATCH",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "If-Match",
+                    "value": "*"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/companies({{companyId}})/customerPayments({{customerPaymentId}})",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "companies({{companyId}})",
+                    "customerPayments({{customerPaymentId}})"
+                  ]
+                },
+                "description": "Update an existing customer payment",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"amount\": 1250.00,\n  \"description\": \"Updated payment amount\",\n  \"comment\": \"Payment amount adjusted\"\n}"
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Delete customer payment",
+              "request": {
+                "method": "DELETE",
+                "header": [
+                  {
+                    "key": "If-Match",
+                    "value": "*"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/companies({{companyId}})/customerPayments({{customerPaymentId}})",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "companies({{companyId}})",
+                    "customerPayments({{customerPaymentId}})"
+                  ]
+                },
+                "description": "Delete a customer payment"
+              },
+              "response": []
+            }
+          ]
+        }
+      ]
+    },
+    {
       "name": "General ledger entry",
       "description": "General ledger entry resource type for Business Central",
       "item": [
@@ -2168,7 +2440,7 @@
         }
       ]
     },
-    {
+{
       "name": "Item",
       "description": "Item resource type for Business Central",
       "item": [
